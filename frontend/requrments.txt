@@ -1,0 +1,3 @@
+flask 
+requstes
+to run this server type --> python app.py    or     flask run

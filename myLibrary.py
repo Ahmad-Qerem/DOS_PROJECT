@@ -11,14 +11,14 @@ myLibrary = Flask(__name__)
 @myLibrary.route("/")
 @myLibrary.route("/home")
 def home():
+
+    return render_template('index.html')
+
     
-    dictToSend = {'name':'ahmad'}
-    response = requests.post('http://localhost:4040/', json=dictToSend)
+    #dictToSend = {'name':'ahmad'}
+    #response = requests.post('http://localhost:4040/', json=dictToSend)
     #data = response.text
-    name = response.__getattribute__()
-    return render_template('index.html',name=name)
-
-
+    #name = response.__getattribute__()
 
 
 
