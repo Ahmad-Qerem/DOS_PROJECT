@@ -27,5 +27,12 @@ def bookInfo(item_number):
     url = "http://127.0.0.1:5000/info/"+item_number
     return requests.get(url).content  
 
+@app.route("/purchase/<item_number>", methods=['GET'])
+def purchase(item_number):
+    url = "http://127.0.0.1:4000/purchase/"+item_number
+    return requests.get(url).content  
+
+
+
 if __name__== "__main__":
     app.run(debug=True , port = 3000)

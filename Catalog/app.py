@@ -58,6 +58,16 @@ def bookInfo(item_number):
         s += "Item not found :("
     return s
 
+
+@app.route("/update/<item_number>", methods=['GET'])
+def update(item_number):
+    df = pd.read_csv('catalog.csv')
+    bookName =str(df.loc[int(item_number) - 1, 'title'])
+    quantity =df.loc[int(item_number) - 1, 'quantity'] - 1
+    df.loc[int(item_number)- 1, 'quantity'] = quantity
+    df.to_csv('catalog.csv', index=False)
+    return bookName
+
 	
-#if __name__== "__main__":
-#    app.run(debug=True)
+if __name__== "__main__":
+    app.run(debug=True , port = 5000)
