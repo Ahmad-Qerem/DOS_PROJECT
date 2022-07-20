@@ -5,11 +5,6 @@ import pandas as pd
 
 app = Flask(__name__)
 
-#@app.route("/")
-#@app.route("/home")
-#def home():
-#    return "BOOKS"
-
 #search query to return all books
 @app.route("/search", methods=['GET'])
 def allBooks():
@@ -21,7 +16,6 @@ def allBooks():
         s += json.dumps(line, indent=4)
     file.close()
     return s
-	
 	
 #search query to return books in specific category
 @app.route("/search/<category>", methods=['GET'])

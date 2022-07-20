@@ -9,17 +9,16 @@ app = Flask(__name__)
 @app.route("/purchase/<item_number>", methods=['GET'])
 def purchaseCatServer(item_number):
 	# check quantity in stock
-    url = "http://127.0.0.1:5000/info/"+item_number
+    url = "http://192.168.1.17:5000/info/"+item_number
       
     msg =requests.get(url)
-
 
     if msg.content.decode() == "Item not found :(":
         return msg.content
     quantity = int(msg.json()['quantity'])
     if quantity > 0:
 		#if available in stock, update the quantity from the catalog server
-        url = "http://127.0.0.1:5000/update/"+item_number
+        url = "http://192.168.1.17:5000/update/"+item_number
         bookName =requests.get(url).content
 
         s = "Purchase complete" + bookName.decode('UTF-8')
@@ -30,4 +29,4 @@ def purchaseCatServer(item_number):
 
 
 if __name__== "__main__":
-    app.run(debug=True , port = 4000)        
+    app.run(host="0.0.0.0")        
