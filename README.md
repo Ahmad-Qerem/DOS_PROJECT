@@ -52,3 +52,13 @@ we can use GUI can accessed it using fronEnd server
 ## OUTPUT
 
 /sreach
+![image](https://user-images.githubusercontent.com/54311405/180568104-4c353b6c-690a-4966-b1dc-a0671b305934.png)
+  
+/search/<category>
+![image](https://user-images.githubusercontent.com/54311405/180568175-ce879d31-0203-4271-9fb8-4c5f5b97463c.png)
+
+/info/< item_number>
+![image](https://user-images.githubusercontent.com/54311405/180568227-b3f5a627-848c-4bc5-8607-85ec152317b2.png)
+
+
+
