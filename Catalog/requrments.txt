@@ -1,3 +1,0 @@
-flask
-pandas
-to run the micro server type on CMD --> flask run
